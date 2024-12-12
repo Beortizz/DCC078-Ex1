@@ -10,7 +10,7 @@ class ConfiguracaoPagamentoTest {
     void testSingletonInstance() {
         ConfiguracaoPagamento instance1 = ConfiguracaoPagamento.getInstance();
         ConfiguracaoPagamento instance2 = ConfiguracaoPagamento.getInstance();
-        assertSame(instance1, instance2, "getInstance() deve retornar a mesma instância");
+        assertSame(instance1, instance2);
     }
 
     @Test
@@ -18,7 +18,7 @@ class ConfiguracaoPagamentoTest {
         ConfiguracaoPagamento configuracao = ConfiguracaoPagamento.getInstance();
         configuracao.setBanco("Banco do Brasil");
 
-        assertEquals("Banco do Brasil", configuracao.getBanco(), "O método getBanco() deve retornar o valor configurado");
+        assertEquals("Banco do Brasil", configuracao.getBanco());
     }
 
     @Test
@@ -26,7 +26,7 @@ class ConfiguracaoPagamentoTest {
         ConfiguracaoPagamento configuracao = ConfiguracaoPagamento.getInstance();
         configuracao.setConta("123456-7");
 
-        assertEquals("123456-7", configuracao.getConta(), "O método getConta() deve retornar o valor configurado");
+        assertEquals("123456-7", configuracao.getConta());
     }
 
     @Test
@@ -34,7 +34,7 @@ class ConfiguracaoPagamentoTest {
         ConfiguracaoPagamento configuracao = ConfiguracaoPagamento.getInstance();
         configuracao.setAgencia("0001");
 
-        assertEquals("0001", configuracao.getAgencia(), "O método getAgencia() deve retornar o valor configurado");
+        assertEquals("0001", configuracao.getAgencia());
     }
 
     @Test
@@ -43,6 +43,6 @@ class ConfiguracaoPagamentoTest {
         configuracao.setBanco("Caixa Econômica");
 
         ConfiguracaoPagamento sameConfiguracao = ConfiguracaoPagamento.getInstance();
-        assertEquals("Caixa Econômica", sameConfiguracao.getBanco(), "A instância singleton deve compartilhar o mesmo estado");
+        assertEquals("Caixa Econômica", sameConfiguracao.getBanco());
     }
 }
